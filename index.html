@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Point</title>
+    <title>PointSale</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h2 id="sidebar-title">Sidebar</h2>
-            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <h2 id="sidebar-title">Pointssale</h2>
+            <button class="toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
         </div>
+
+
         <div class="sidebar-content">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="#home"><i class="fas fa-search"></i><span>Quick search</span></a>
+            <a href="#about"><i class="fas fa-info-circle"></i><span>Inbox</span></a>
+        </div>
+
+        <div class="sidebar-content">
+            <p>Menu</p>
+            <a href="#home"><i class="fas fa-search"></i><span>Dashborad</span></a>
+            <a href="#about"><i class="fas fa-info-circle"></i><span>Invoices</span></a>
+            <a href="#about"><i class="fas fa-info-circle"></i><span>Order summary</span></a>
+            <a href="#about"><i class="fas fa-info-circle"></i><span>Trash</span></a>
         </div>
     </div>
     <div class="main-content" id="main-content">
