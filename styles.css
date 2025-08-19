@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
-:root{
-    --primary-color:#4456B6;
-    --bg-color:#F5F6FA;
+* {
+    font-family: "Libertinus Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+:root {
+    --primary-color: #4456B6;
+    --bg-color: #F5F6FA;
     --text-color: #1c1c1c;
 }
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
 }
 .sidebar {
     width: 250px;
@@ -20,6 +25,10 @@ body {
 .sidebar.collapsed {
     width: 60px;
 }
+.sidebar h2 {
+    font-weight: 800;
+    color: var(--primary-color);
+}
 .sidebar-header {
     padding: 20px;
     background-color: var(--bg-color);
@@ -28,24 +37,37 @@ body {
     align-items: center;
 }
 .sidebar-content {
-    padding: 20px;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    border-top: 1px solid rgb(207, 207, 207);
 }
-.sidebar-content a {
+.sidebar-content, .sidebar-content-menu {
+    padding: 10px 20px;
+}
+.sidebar-content a, .sidebar-content-menu a {
     color: var(--text-color);
     text-decoration: none;
     display: flex;
     align-items: center;
     margin: 10px 0;
+    padding: 5px 0;
 }
-.sidebar-content a i {
+.sidebar-content a i, .sidebar-content-menu a i {
     margin-right: 10px;
     width: 20px;
     text-align: center;
 }
-.sidebar-content a span {
+.sidebar-content a span, .sidebar-content-menu a span {
     display: inline-block;
 }
-.sidebar.collapsed .sidebar-content a span {
+.sidebar.collapsed .sidebar-content a span, .sidebar.collapsed .sidebar-content-menu a span {
+    display: none;
+}
+.menu-title {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+.sidebar.collapsed .menu-title {
     display: none;
 }
 .toggle-btn {
@@ -62,4 +84,105 @@ body {
 }
 .main-content.collapsed {
     margin-left: 60px;
+}
+.sidebar-content-menu.bottom-menu {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    border-top: 1px solid rgb(207, 207, 207);
+}
+.sidebar-plan-card {
+    position: absolute;
+    bottom: 200px; /* Adjusted to sit above bottom-menu */
+    /* width: 100%; */
+    padding: 15px 20px;
+    margin: 0px 6px;
+    background: linear-gradient(180deg, #b1c0f0 0%, white 100%);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.119) 0px 1px 1px 1px ;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 5px;
+}
+.plan-description span{
+    font-size: 14px;
+    color: black;
+}
+.plan-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.plan-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+.plan-info {
+    display: flex;
+    flex-direction: column;
+}
+.plan-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.plan-description {
+    font-size: 12px;
+    opacity: 0.8;
+}
+.plan-button {
+    background-color: white;
+    color: var(--text-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 10px;
+}
+.sidebar.collapsed .plan-info, .sidebar.collapsed .plan-button {
+    display: none;
+}
+.sidebar-user {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    border-top: 1px solid rgb(207, 207, 207);
+}
+.sidebar-user .user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.sidebar-user .user-info {
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-user .user-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.sidebar-user .user-position {
+    font-size: 12px;
+    color: #aaa;
+}
+.sidebar.collapsed .sidebar-user .user-info {
+    display: none;
 }

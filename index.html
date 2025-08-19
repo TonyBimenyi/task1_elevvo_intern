@@ -13,19 +13,40 @@
             <h2 id="sidebar-title">Pointssale</h2>
             <button class="toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
         </div>
-
-
         <div class="sidebar-content">
             <a href="#home"><i class="fas fa-search"></i><span>Quick search</span></a>
-            <a href="#about"><i class="fas fa-info-circle"></i><span>Inbox</span></a>
+            <a href="#inbox"><i class="fas fa-inbox"></i><span>Inbox</span></a>
         </div>
-
-        <div class="sidebar-content">
-            <p>Menu</p>
-            <a href="#home"><i class="fas fa-search"></i><span>Dashborad</span></a>
-            <a href="#about"><i class="fas fa-info-circle"></i><span>Invoices</span></a>
-            <a href="#about"><i class="fas fa-info-circle"></i><span>Order summary</span></a>
-            <a href="#about"><i class="fas fa-info-circle"></i><span>Trash</span></a>
+        <div class="sidebar-content-menu">
+            <p class="menu-title">Menu</p>
+            <a href="#dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+            <a href="#invoices"><i class="fas fa-file-invoice"></i><span>Invoices</span></a>
+            <a href="#orders"><i class="fas fa-list"></i><span>Order summary</span></a>
+            <a href="#trash"><i class="fas fa-trash"></i><span>Trash</span></a>
+        </div>
+        <div class="sidebar-plan-card">
+            <div class="plan-header">
+                <i class="fas fa-crown plan-icon"></i>
+                <div class="plan-info">
+                    <span class="plan-title">Current Plan: <br>Pro trial</span>
+                    
+                </div>
+            </div>
+            <div class="plan-description">
+                <span class="plan-description-text">Upgrade to Pro to get the latest and exclusive features</span>
+            </div>
+            <button class="plan-button">Upgrade to Pro</button>
+        </div>
+        <div class="sidebar-content-menu bottom-menu">
+            <a href="#reports"><i class="fas fa-chart-bar"></i><span>Theme</span></a>
+            <a href="#settings"><i class="fas fa-cog"></i><span>Settings</span></a>
+        </div>
+        <div class="sidebar-user">
+            <img src="https://via.placeholder.com/40" alt="User Image" class="user-image">
+            <div class="user-info">
+                <span class="user-name">John Doe</span>
+                <span class="user-position">Administrator</span>
+            </div>
         </div>
     </div>
     <div class="main-content" id="main-content">
