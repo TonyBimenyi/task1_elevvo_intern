@@ -1,0 +1,89 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6f9;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background: #1e293b;
+  color: #fff;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar .logo i {
+  font-size: 24px;
+}
+
+.sidebar .links {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.sidebar .links li {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar .links li:hover {
+  background: #334155;
+}
+
+/* Hide text when collapsed */
+.sidebar.collapsed .links li span,
+.sidebar.collapsed .logo-text {
+  display: none;
+}
+
+/* Main Content */
+.main {
+  margin-left: 220px;
+  padding: 20px;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main {
+  margin-left: 70px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  background: #1e293b;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 20px;
+}
