@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
-    font-family: "Libertinus Sans", sans-serif;
+    font-family: "poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -50,6 +50,7 @@ body {
     align-items: center;
     margin: 10px 0;
     padding: 5px 0;
+    font-size: 14px;
 }
 .sidebar-content a i, .sidebar-content-menu a i {
     margin-right: 10px;
@@ -65,7 +66,8 @@ body {
 .menu-title {
     margin: 10px 0;
     font-size: 14px;
-    color: #aaa;
+    color: var(--text-color);
+    font-weight: 700;
 }
 .sidebar.collapsed .menu-title {
     display: none;
@@ -106,7 +108,7 @@ body {
     border-radius: 5px;
 }
 .plan-description span{
-    font-size: 14px;
+    font-size: 12px;
     color: black;
 }
 .plan-header {
@@ -151,6 +153,7 @@ body {
     font-weight: 800;
     text-align: center;
     margin-top: 10px;
+    font-weight: 700;
 }
 .sidebar.collapsed .plan-info, .sidebar.collapsed .plan-button {
     display: none;
@@ -176,7 +179,7 @@ body {
     flex-direction: column;
 }
 .sidebar-user .user-name {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 .sidebar-user .user-position {
