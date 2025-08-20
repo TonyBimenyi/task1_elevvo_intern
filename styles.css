@@ -21,6 +21,8 @@ body {
     position: fixed;
     transition: width 0.3s;
     overflow-x: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 1px 1px ;
 }
 .sidebar.collapsed {
     width: 60px;
@@ -66,11 +68,24 @@ margin-right: 0px !important;
    margin-right: 0px !important;
 
 }
+.sidebar-content-menu .active{
+    background-color: white !important;
+    padding: 10px;
+    margin-left: -8px;
+    border-radius: 5px ;
+    box-shadow: rgba(0, 0, 0, 0.243) 0px 1px 1px 1px ;
+}
+.sidebar.collapsed  .sidebar-content-menu .active{
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+}
 .sidebar.collapsed  .sidebar-content-menu a #active{
     background-color: white !important;
     padding: 12px;
-    margin-left: -8px;
+    margin-left: -12px;
     border-radius: 5px ;
+    box-shadow: rgba(0, 0, 0, 0.243) 0px 1px 1px 1px ;
     /* height: 60px; */
     /* width: px; */
     /* display: none; */
@@ -97,6 +112,24 @@ margin-right: 0px !important;
     font-size: 18px;
     cursor: pointer;
 }
+/* Ensure toggle button is always visible */
+.sidebar .toggle-btn {
+    position: absolute;
+    /* top: 20px; */
+    right: 10px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* When collapsed, adjust its position */
+.sidebar.collapsed .toggle-btn {
+    right: 15px; /* keep inside the 60px sidebar */
+}
+
 .main-content {
     margin-left: 250px;
     padding: 20px;
@@ -117,8 +150,8 @@ margin-right: 0px !important;
     position: absolute;
     bottom: 200px; /* Adjusted to sit above bottom-menu */
     /* width: 100%; */
-    padding: 15px 20px;
-    margin: 0px 6px;
+    padding: 15px 12px;
+    margin: 0px 8px;
     background: linear-gradient(180deg, #b1c0f0 0%, white 100%);
     color: white;
     box-shadow: rgba(0, 0, 0, 0.119) 0px 1px 1px 1px ;
@@ -175,6 +208,7 @@ margin-right: 0px !important;
     text-align: center;
     margin-top: 10px;
     font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.243) 0px 1px 1px 1px ;
 }
 .sidebar.collapsed .plan-info, .sidebar.collapsed .plan-button {
     display: none;
@@ -252,3 +286,123 @@ Center all sidebar icons vertically when collapsed
     background: none;
     border: none;
 }
+
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-10px); }
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* --- SIDEBAR ANIMATION --- */
+.sidebar {
+    width: 250px;
+    transition: width 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    overflow-x: hidden;
+}
+.sidebar.collapsed {
+    width: 60px;
+}
+
+/* --- TEXT FADE --- */
+.sidebar-content a span,
+.sidebar-content-menu a span,
+.menu-title,
+.sidebar-user .user-info,
+.plan-info,
+.plan-description,
+.plan-button {
+    animation: fadeIn 0.3s ease forwards;
+}
+.sidebar.collapsed .sidebar-content a span,
+.sidebar.collapsed .sidebar-content-menu a span,
+.sidebar.collapsed .menu-title,
+.sidebar.collapsed .sidebar-user .user-info,
+.sidebar.collapsed .plan-info,
+.sidebar.collapsed .plan-description,
+.sidebar.collapsed .plan-button {
+    animation: fadeOut 0.2s ease forwards;
+}
+
+/* --- LINK HOVER EFFECT --- */
+.sidebar-content a,
+.sidebar-content-menu a {
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+.sidebar-content a:hover,
+.sidebar-content-menu a:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+/* --- ACTIVE ITEM PULSE --- */
+.sidebar-content-menu .active {
+    animation: bounceIn 0.4s ease;
+}
+
+/* --- PLAN CARD ICON --- */
+.sidebar.collapsed .sidebar-plan-card .plan-icon {
+    animation: bounceIn 0.5s ease;
+}
+
+/* --- MAIN CONTENT SHIFT --- */
+.main-content {
+    transition: margin-left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+/* Default hidden state (collapsed) */
+.sidebar.collapsed .sidebar-content a span,
+.sidebar.collapsed .sidebar-content-menu a span,
+.sidebar.collapsed .menu-title,
+.sidebar.collapsed .sidebar-user .user-info,
+.sidebar.collapsed .plan-info,
+.sidebar.collapsed .plan-description,
+.sidebar.collapsed .plan-button {
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none; /* Prevents clicks while hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Expanded state (visible) */
+.sidebar-content a span,
+.sidebar-content-menu a span,
+.menu-title,
+.sidebar-user .user-info,
+.plan-info,
+.plan-description,
+.plan-button {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* Plan card expandable section */
+.plan-extra {
+    max-height: 200px;   /* enough to fit content */
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+/* Collapsed state */
+.sidebar.collapsed .plan-extra {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none; /* prevent clicking hidden button */
+}
+.sidebar.collapsed .sidebar-plan-card .plan-info,
+.sidebar.collapsed .sidebar-plan-card .plan-description,
+.sidebar.collapsed .sidebar-plan-card .plan-button {
+    display: none;
+}
+
+

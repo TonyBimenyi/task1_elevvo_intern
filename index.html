@@ -10,8 +10,8 @@
 <body>
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h2 id="sidebar-title">Pointssale</h2>
-            <button class="toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <h2 id="sidebar-title">Point<span>Sale</span> </h2>
+    <button class="toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
         </div>
         <div class="sidebar-content">
             <a href="#home"><i class="fas fa-search"></i><span>Quick search</span></a>
@@ -19,7 +19,7 @@
         </div>
         <div class="sidebar-content-menu">
             <p class="menu-title">Menu</p>
-            <a href="#dashboard"><i id="active" class="fas fa-tachometer-alt"></i><span >Dashboard</span></a>
+            <a class="active" href="#dashboard"><i id="active" class="fas fa-tachometer-alt"></i><span >Dashboard</span></a>
             <a href="#invoices"><i class="fas fa-file-invoice"></i><span>Invoices</span></a>
             <a href="#orders"><i class="fas fa-list"></i><span>Order summary</span></a>
             <a href="#trash"><i class="fas fa-trash"></i><span>Trash</span></a>
@@ -29,14 +29,20 @@
                 <i class="fas fa-crown plan-icon"></i>
                 <div class="plan-info">
                     <span class="plan-title">Current Plan: <br>Pro trial</span>
-                    
                 </div>
             </div>
-            <div class="plan-description">
-                <span class="plan-description-text">Upgrade to Pro to get the latest and exclusive features</span>
+        
+            <!-- expandable content -->
+            <div class="plan-extra">
+                <div class="plan-description">
+                    <span class="plan-description-text">
+                        Upgrade to Pro to get the latest and exclusive features
+                    </span>
+                </div>
+                <button class="plan-button">Upgrade to Pro</button>
             </div>
-            <button class="plan-button">Upgrade to Pro</button>
         </div>
+        
         <div class="sidebar-content-menu bottom-menu">
             <a href="#reports"><i class="fas fa-chart-bar"></i><span>Theme</span></a>
             <a href="#settings"><i class="fas fa-cog"></i><span>Settings</span></a>
