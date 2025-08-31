@@ -406,3 +406,42 @@ Center all sidebar icons vertically when collapsed
 }
 
 
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -250px; /* hide sidebar offscreen by default */
+    top: 0;
+    height: 100%;
+    z-index: 2000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0; /* slide in when active */
+  }
+
+  .main-content {
+    margin-left: 0 !important; /* content full width on mobile */
+  }
+
+  /* Toggle button always visible (fixed top left on mobile) */
+  .toggle-btn {
+    position: fixed !important;
+    top: 15px;
+    left: 15px;
+    z-index: 3000;
+    background: white;
+    border-radius: 5px;
+    padding: 6px 10px;
+    /* box-shadow: rgba(0,0,0,0.15) 0px 2px 4px;
+     */
+  }
+
+  /* Hide plan card and bottom menu on small phones if needed */
+  .sidebar-plan-card,
+  .sidebar-content-menu.bottom-menu {
+    position: relative;
+    bottom: auto;
+  }
+}

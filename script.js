@@ -3,11 +3,16 @@ function toggleSidebar() {
     const mainContent = document.getElementById('main-content');
     const sidebarTitle = document.getElementById('sidebar-title');
 
-    sidebar.classList.toggle('collapsed');
-    mainContent.classList.toggle('collapsed');
+    
+    if (window.innerWidth <= 768) {
+        sidebar.classList.toggle('show');
+    } else {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('collapsed');
+    }
 
-    // Sidebar title fades instead of instantly disappearing
-    if (sidebar.classList.contains('collapsed')) {
+    // Sidebar title animation
+    if (sidebar.classList.contains('collapsed') && window.innerWidth > 768) {
         sidebarTitle.style.opacity = "0";
         sidebarTitle.style.transform = "translateX(-10px)";
     } else {
