@@ -438,7 +438,7 @@ Center all sidebar icons vertically when collapsed
      */
   }
 
-  /* Hide plan card and bottom menu on small phones if needed */
+  /* Hide plan card and bottom menu */
   .sidebar-plan-card,
   .sidebar-content-menu.bottom-menu {
     position: relative;
